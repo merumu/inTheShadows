@@ -9,11 +9,26 @@ public class DragnRotate : MonoBehaviour{
 	public bool rotX;
 	public bool rotZ;
 	public bool moveY;
+	public bool mirror;
+	public Vector3 win;
+	private bool success = false;
 	private float timer = 0;
 	private Vector3 positionTmp = Vector3.zero;
 
 	void Update(){
-		solution();
+		if (!success)
+			solution();
+		if (success)
+			successPos();
+	}
+
+	private void successPos()
+	{
+		if (timer < 0)
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(win), 10f);
+		else if (timer > 0)
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(win.x + 90, win.y, win.z)), 10f);
+		Debug.Log("Success !");
 	}
 
 	private void solution()
@@ -21,19 +36,25 @@ public class DragnRotate : MonoBehaviour{
 		RaycastHit hit;
 		Vector3 forward = transform.TransformDirection(Vector3.down * 10000);
 		Ray ray = new Ray(transform.position, forward);
+		Vector3 forward2 = transform.TransformDirection(Vector3.up * 10000);
+		Ray ray2 = new Ray(transform.position, forward2);
 		if (Physics.Raycast(ray, out hit, 10, 1 << LayerMask.NameToLayer("solution")))
         {
           	if (hit.collider)
            		timer += Time.deltaTime;
-        	else
-        		timer = 0;
-		} 
-		Debug.DrawLine (transform.position, forward, Color.red);
-		if (timer > 1.5f)
-		{
-			Debug.Log(hit.collider.gameObject.name);
-			timer = 0;
 		}
+		else if (mirror && Physics.Raycast(ray2, out hit, 10, 1 << LayerMask.NameToLayer("solution")))
+		{
+			if (hit.collider)
+           		timer -= Time.deltaTime;
+		}
+		else
+			timer = 0;
+		if (timer > 0.5f || timer < -0.5f)
+			success = true;
+		Debug.DrawLine (transform.position, forward, Color.red);
+		if (mirror)
+			Debug.DrawLine (transform.position, forward2, Color.red);
 	}
 
 	void OnMouseDrag(){
