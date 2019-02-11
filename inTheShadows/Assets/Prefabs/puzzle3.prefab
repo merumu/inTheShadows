@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4020422925445346
 Transform:
   m_ObjectHideFlags: 1
@@ -357,6 +357,7 @@ MonoBehaviour:
   piece2: {fileID: 114910057362143298}
   victory: {fileID: 0}
   multi: 1
+  system: {fileID: 0}
 --- !u!135 &135570462300383038
 SphereCollider:
   m_ObjectHideFlags: 1
