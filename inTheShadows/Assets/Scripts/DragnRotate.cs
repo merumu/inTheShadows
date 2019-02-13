@@ -26,7 +26,7 @@ public class DragnRotate : MonoBehaviour{
 	{
 		if (timer < 0)
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(win), 5f);
-		else if (timer > 0)
+		else if (timer >= 0)
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(win.x, win.y + 180, win.z)), 5f);
 		end = true;
 	}

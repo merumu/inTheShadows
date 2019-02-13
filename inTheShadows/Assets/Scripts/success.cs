@@ -11,9 +11,15 @@ public class success : MonoBehaviour {
 	public bool multi;
 	public ParticleSystem system;
 	private bool play = true;
+	private int konami;
 	
 	void Update () {
-		if (!multi && piece1.success)
+		win();
+		konamiCode();
+	}
+
+	private void win(){
+		if ((!multi && piece1.success) || (!multi && konami == 6))
 		{
 			piece1.successPos();
 			victory.alpha = 1;
@@ -24,7 +30,7 @@ public class success : MonoBehaviour {
 				play = false;
 			}
 		}
-		if (multi && piece1.success && piece2.success)
+		if ((multi && piece1.success && piece2.success) || (multi && konami == 6))
 		{
 			piece1.successPos();
 			piece2.successPos();
@@ -34,6 +40,54 @@ public class success : MonoBehaviour {
 			{
 				system.Play(play);
 				play = false;
+			}
+		}
+	}
+
+	private void konamiCode(){
+		if (konami != 6)
+		{
+			if (Input.GetKeyDown(KeyCode.UpArrow))
+			{
+				if (konami == 0)
+					konami++;
+				else
+					konami = 0;
+			}
+			if (Input.GetKeyDown(KeyCode.DownArrow))
+			{
+				if (konami == 1)
+					konami++;
+				else
+					konami = 0;
+			}
+			if (Input.GetKeyDown(KeyCode.LeftArrow))
+			{
+				if (konami == 2)
+					konami++;
+				else
+					konami = 0;
+			}
+			if (Input.GetKeyDown(KeyCode.RightArrow))
+			{
+				if (konami == 3)
+					konami++;
+				else
+					konami = 0;
+			}
+			if (Input.GetKeyDown("a"))
+			{
+				if (konami == 4)
+					konami++;
+				else
+					konami = 0;
+			}
+			if (Input.GetKeyDown("b"))
+			{
+				if (konami == 5)
+					konami++;
+				else
+					konami = 0;
 			}
 		}
 	}
