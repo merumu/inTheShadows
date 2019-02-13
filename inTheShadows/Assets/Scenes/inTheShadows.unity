@@ -7865,7 +7865,7 @@ Prefab:
       objectReference: {fileID: 608445265}
     - target: {fileID: 1576474195375206, guid: 8ca1d5fda0349433caea00b4b06c67cc, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114987186325056036, guid: 8ca1d5fda0349433caea00b4b06c67cc,
         type: 2}
@@ -15200,6 +15200,7 @@ GameObject:
   - component: {fileID: 1920691653}
   - component: {fileID: 1920691652}
   - component: {fileID: 1920691656}
+  - component: {fileID: 1920691657}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15285,6 +15286,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 1
+--- !u!114 &1920691657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1920691651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa39ee71acac42aba492448a498cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1928558835
 GameObject:
   m_ObjectHideFlags: 0
