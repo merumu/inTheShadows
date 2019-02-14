@@ -15,6 +15,11 @@ public class selectLevel : MonoBehaviour {
 	}
 	
 	void Update () {
+		moveToTarget();
+	}
+
+	private void moveToTarget()
+	{
 		transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
 		shadows.transform.position = new Vector3(transform.position.x + shadows.transform.parent.transform.localPosition.x, shadows.transform.position.y, shadows.transform.position.z);
 	}
