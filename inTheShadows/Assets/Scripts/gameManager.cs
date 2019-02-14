@@ -12,11 +12,9 @@ public class gameManager : MonoBehaviour {
 	void Awake () {
 		if (gm == null)
 			gm = this;
-		Debug.Log("Awake");
 	}
 
 	void Start () {
-		Debug.Log(level);
 		if (puzzle.Count > 0)
 			puzzle[level].SetActive(true);
 	}

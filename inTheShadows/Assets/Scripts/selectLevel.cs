@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class selectLevel : MonoBehaviour {
 
 	public int level;
 	public GameObject shadows;
+	public Button right;
+	public Button left;
 	private Vector3 target;
 	private float speed = 8;
 
@@ -15,6 +18,14 @@ public class selectLevel : MonoBehaviour {
 	}
 	
 	void Update () {
+		if (level == 3)
+			right.interactable = false;
+		else
+			right.interactable = true;
+		if (level == 0)
+			left.interactable = false;
+		else
+			left.interactable = true;
 		moveToTarget();
 	}
 
