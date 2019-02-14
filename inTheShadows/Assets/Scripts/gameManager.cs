@@ -30,6 +30,7 @@ public class gameManager : MonoBehaviour {
 
 	public void chooseMode(bool classic)
 	{
+		level = 0;
 		classicMode = classic;
 	}
 

@@ -77,10 +77,6 @@ public class DragnRotate : MonoBehaviour{
 		}
 		if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl) && moveY)
 		{
-			//if (positionTmp.x > Input.mousePosition.x)
-			//	transform.Translate(Vector3.left * 0.2f, Space.World);
-			//if (positionTmp.x < Input.mousePosition.x)
-			//	transform.Translate(Vector3.right * 0.2f, Space.World);
 			if (positionTmp.y < Input.mousePosition.y && transform.position.y < 5f)
 				transform.Translate(Vector3.up * 0.2f, Space.World);
 			if (positionTmp.y > Input.mousePosition.y && transform.position.y > -6f)
