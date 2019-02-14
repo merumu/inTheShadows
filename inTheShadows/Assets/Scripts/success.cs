@@ -24,6 +24,7 @@ public class success : MonoBehaviour {
 			piece1.successPos();
 			victory.alpha = 1;
 			victory.interactable = true;
+			victory.blocksRaycasts = true;
 			if (play)
 			{
 				system.Play(play);
@@ -36,6 +37,7 @@ public class success : MonoBehaviour {
 			piece2.successPos();
 			victory.alpha = 1;
 			victory.interactable = true;
+			victory.blocksRaycasts = true;
 			if (play)
 			{
 				system.Play(play);

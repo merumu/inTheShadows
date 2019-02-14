@@ -5,6 +5,7 @@ using UnityEngine;
 public class selectLevel : MonoBehaviour {
 
 	public int level;
+	public GameObject shadows;
 	private Vector3 target;
 	private float speed = 8;
 
@@ -14,16 +15,15 @@ public class selectLevel : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (transform.position != target)
-			transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
+		transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
+		shadows.transform.position = new Vector3(transform.position.x + shadows.transform.parent.transform.localPosition.x, shadows.transform.position.y, shadows.transform.position.z);
 	}
 
 	public void next()
 	{
 		if (level < 3 && Vector3.Distance(transform.position, target) < 5)
 		{
-			target = new Vector3(transform.position.x - 500, transform.position.y, transform.position.z);
-		//	transform.Translate(new Vector3(-500, 0, 0));
+			target = new Vector3(transform.position.x - 502, transform.position.y, transform.position.z);
 			level++;
 		}
 	}
@@ -32,8 +32,7 @@ public class selectLevel : MonoBehaviour {
 	{
 		if (level > 0 && Vector3.Distance(transform.position, target) < 5)
 		{
-			target = new Vector3(transform.position.x + 500, transform.position.y, transform.position.z);
-		//	transform.Translate(new Vector3(500, 0, 0));
+			target = new Vector3(transform.position.x + 502, transform.position.y, transform.position.z);
 			level--;
 		}
 	}

@@ -6,6 +6,8 @@ public class gameManager : MonoBehaviour {
 
 	public static gameManager gm;
 	public static int level;
+	public selectLevel select;
+	public List<GameObject> puzzle;
 
 	void Awake () {
 		if (gm == null)
@@ -14,9 +16,13 @@ public class gameManager : MonoBehaviour {
 	}
 
 	void Start () {
-		Debug.Log("start");
+		Debug.Log(level);
+		if (puzzle.Count > 0)
+			puzzle[level].SetActive(true);
 	}
 	
 	void Update () {
+		if (select)
+			level = select.level;
 	}
 }
