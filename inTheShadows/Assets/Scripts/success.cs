@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class success : MonoBehaviour {
 
+	public gameManager gm;
 	public DragnRotate piece1;
 	public DragnRotate piece2;
 	public CanvasGroup victory;
@@ -27,6 +28,8 @@ public class success : MonoBehaviour {
 			victory.blocksRaycasts = true;
 			if (play)
 			{
+				if (gm.mode)
+					gm.saveProgress();
 				system.Play(play);
 				play = false;
 			}
@@ -40,6 +43,8 @@ public class success : MonoBehaviour {
 			victory.blocksRaycasts = true;
 			if (play)
 			{
+				if (gm.mode)
+					gm.saveProgress();
 				system.Play(play);
 				play = false;
 			}

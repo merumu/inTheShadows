@@ -392,7 +392,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1080281227
+  randomSeed: -362305821
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4063,6 +4063,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114527037006651284, guid: d65630e3761514a10b75ba7ede112b6e,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1920691657}
     - target: {fileID: 114527037006651284, guid: d65630e3761514a10b75ba7ede112b6e,
         type: 2}
       propertyPath: victory
@@ -7881,18 +7886,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114987186325056036, guid: 8ca1d5fda0349433caea00b4b06c67cc,
         type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1920691657}
+    - target: {fileID: 114987186325056036, guid: 8ca1d5fda0349433caea00b4b06c67cc,
+        type: 2}
       propertyPath: victory
       value: 
       objectReference: {fileID: 608445265}
-    - target: {fileID: 1576474195375206, guid: 8ca1d5fda0349433caea00b4b06c67cc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114987186325056036, guid: 8ca1d5fda0349433caea00b4b06c67cc,
         type: 2}
       propertyPath: system
       value: 
       objectReference: {fileID: 1786587831}
+    - target: {fileID: 1576474195375206, guid: 8ca1d5fda0349433caea00b4b06c67cc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ca1d5fda0349433caea00b4b06c67cc, type: 2}
   m_IsPrefabParent: 0
@@ -8133,7 +8143,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1950680725
+  randomSeed: 1121909759
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11696,6 +11706,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114546019983586674, guid: 92d80b4a3e75e44e2bb86a730ec569e5,
         type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1920691657}
+    - target: {fileID: 114546019983586674, guid: 92d80b4a3e75e44e2bb86a730ec569e5,
+        type: 2}
       propertyPath: victory
       value: 
       objectReference: {fileID: 608445265}
@@ -11912,7 +11927,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2031432511
+  randomSeed: -187277594
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15346,6 +15361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa39ee71acac42aba492448a498cd89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
+  lvl: 0
   select: {fileID: 0}
   puzzle:
   - {fileID: 468491596}
@@ -15422,6 +15439,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114930849249475706, guid: 5ab977618d4d0414fb1c265a39203c1d,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1920691657}
     - target: {fileID: 114930849249475706, guid: 5ab977618d4d0414fb1c265a39203c1d,
         type: 2}
       propertyPath: victory

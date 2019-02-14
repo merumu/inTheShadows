@@ -353,10 +353,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0220627cdf85b413f80dfb5fade47f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   piece1: {fileID: 114524603181819856}
   piece2: {fileID: 114221988240175178}
   victory: {fileID: 0}
   multi: 1
+  system: {fileID: 0}
 --- !u!135 &135643693868688206
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class selectLevel : MonoBehaviour {
 
+	public gameManager gm;
 	public int level;
 	public GameObject shadows;
 	public Button right;
@@ -13,8 +14,10 @@ public class selectLevel : MonoBehaviour {
 	private float speed = 8;
 
 	void Start () {
+		level = gm.lvl;
+		transform.position = new Vector3(transform.position.x - 502 * level, transform.position.y, transform.position.z);
+		shadows.transform.position = new Vector3(transform.position.x, shadows.transform.position.y, shadows.transform.position.z);
 		target = transform.position;
-		level = 0;
 	}
 	
 	void Update () {

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour {
 
-	public static gameManager gm;
+	public static bool classicMode;
+	public bool mode;
 	public static int level;
+	public int lvl;
 	public selectLevel select;
 	public List<GameObject> puzzle;
 
 	void Awake () {
-		if (gm == null)
-			gm = this;
+		lvl = level;
+		mode = classicMode;
+		if (GetInts("puzzleLock").Count == 0)
+			resetProgress();
 	}
 
 	void Start () {
@@ -22,5 +26,49 @@ public class gameManager : MonoBehaviour {
 	void Update () {
 		if (select)
 			level = select.level;
+	}
+
+	public void chooseMode(bool classic)
+	{
+		classicMode = classic;
+	}
+
+	public void resetProgress()
+	{
+		List<int> puzzleLock = new List<int> {2,0,0,0};
+		SetInts("puzzleLock", puzzleLock);
+	}
+
+	public void saveProgress()
+	{
+		List<int> puzzleLock = GetInts("puzzleLock");
+		if (puzzle.Count > level + 1 && puzzleLock[level + 1] == 0)
+		{
+			puzzleLock[level + 1] = 1;
+			SetInts("puzzleLock", puzzleLock);
+		}
+	}
+
+	public void SetInts(string key, List<int> collection)
+	{
+		// Delete Old Collection
+		int count = PlayerPrefs.GetInt(key + ".Count", 0);
+		for (int i = 0; i < count; i++)
+			PlayerPrefs.DeleteKey(key + "[" + i + "]");
+		// Create New Collection
+		PlayerPrefs.SetInt(key + ".Count", collection.Count);
+		for (int i = 0; i < collection.Count; i++)
+			PlayerPrefs.SetInt(key + "[" + i + "]", collection[i]);
+		// Save Collection
+		PlayerPrefs.Save();
+	}
+
+	public List<int> GetInts(string key)
+	{
+		int count = PlayerPrefs.GetInt(key + ".Count", 0);
+		List<int> list = new List<int>(new int[count]);
+		for (int i = 0; i < count; i++)
+			list[i] = PlayerPrefs.GetInt(key + "[" + i + "]");
+		return list;
 	}
 }
