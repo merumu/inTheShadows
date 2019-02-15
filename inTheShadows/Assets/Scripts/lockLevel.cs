@@ -19,8 +19,14 @@ public class lockLevel : MonoBehaviour {
 		if (gm.mode)
 		{
 			setLock();
-			setLock();
+			StartCoroutine(endAnim());
 		}
+	}
+
+	IEnumerator endAnim()
+	{
+		yield return new WaitForSeconds(0.6f);
+		setLock();
 	}
 	
 	private void setLock()
@@ -59,6 +65,5 @@ public class lockLevel : MonoBehaviour {
 	{
 		anim = unlock.GetComponent<Animation>();
 		anim.Play();
-		Debug.Log("unlock next level");
 	}
 }

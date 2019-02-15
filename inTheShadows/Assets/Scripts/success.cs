@@ -9,44 +9,63 @@ public class success : MonoBehaviour {
 	public DragnRotate piece1;
 	public DragnRotate piece2;
 	public CanvasGroup victory;
+	public CanvasGroup escMenu;
 	public bool multi;
 	public ParticleSystem system;
 	private bool play = true;
 	private int konami;
 	
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.Escape) && victory.alpha == 0)
+		{
+			if (escMenu.alpha == 0)
+			{
+				escMenu.alpha = 1;
+				escMenu.interactable = true;
+				escMenu.blocksRaycasts = true;
+			}
+			else
+			{
+				escMenu.alpha = 0;
+				escMenu.interactable = false;
+				escMenu.blocksRaycasts = false;
+			}
+		}
 		win();
 		konamiCode();
 	}
 
 	private void win(){
-		if ((!multi && piece1.success) || (!multi && konami == 6))
+		if (escMenu.alpha == 0)
 		{
-			piece1.successPos();
-			victory.alpha = 1;
-			victory.interactable = true;
-			victory.blocksRaycasts = true;
-			if (play)
+			if ((!multi && piece1.success) || (!multi && konami == 6))
 			{
-				if (gm.mode)
-					gm.saveProgress();
-				system.Play(play);
-				play = false;
+				piece1.successPos();
+				victory.alpha = 1;
+				victory.interactable = true;
+				victory.blocksRaycasts = true;
+				if (play)
+				{
+					if (gm.mode)
+						gm.saveProgress();
+					system.Play(play);
+					play = false;
+				}
 			}
-		}
-		if ((multi && piece1.success && piece2.success) || (multi && konami == 6))
-		{
-			piece1.successPos();
-			piece2.successPos();
-			victory.alpha = 1;
-			victory.interactable = true;
-			victory.blocksRaycasts = true;
-			if (play)
+			if ((multi && piece1.success && piece2.success) || (multi && konami == 6))
 			{
-				if (gm.mode)
-					gm.saveProgress();
-				system.Play(play);
-				play = false;
+				piece1.successPos();
+				piece2.successPos();
+				victory.alpha = 1;
+				victory.interactable = true;
+				victory.blocksRaycasts = true;
+				if (play)
+				{
+					if (gm.mode)
+						gm.saveProgress();
+					system.Play(play);
+					play = false;
+				}
 			}
 		}
 	}

@@ -55,11 +55,13 @@ public class gameManager : MonoBehaviour {
 	public void saveProgress()
 	{
 		List<int> puzzleLock = GetInts("puzzleLock");
+		puzzleLock[level] = 3;
 		if (puzzle.Count > level + 1 && puzzleLock[level + 1] == 0)
 		{
 			puzzleLock[level + 1] = 1;
-			SetInts("puzzleLock", puzzleLock);
+			level++;
 		}
+		SetInts("puzzleLock", puzzleLock);
 	}
 
 	public void SetInts(string key, List<int> collection)
