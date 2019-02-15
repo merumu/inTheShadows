@@ -14,6 +14,7 @@ public class success : MonoBehaviour {
 	public ParticleSystem system;
 	private bool play = true;
 	private int konami;
+	private float timer;
 	
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape) && victory.alpha == 0)
@@ -31,6 +32,7 @@ public class success : MonoBehaviour {
 				escMenu.blocksRaycasts = false;
 			}
 		}
+		timer += Time.deltaTime;
 		win();
 		konamiCode();
 	}
@@ -47,7 +49,7 @@ public class success : MonoBehaviour {
 				if (play)
 				{
 					if (gm.mode)
-						gm.saveProgress();
+						gm.saveProgress(timer);
 					system.Play(play);
 					play = false;
 				}
@@ -62,7 +64,7 @@ public class success : MonoBehaviour {
 				if (play)
 				{
 					if (gm.mode)
-						gm.saveProgress();
+						gm.saveProgress(timer);
 					system.Play(play);
 					play = false;
 				}

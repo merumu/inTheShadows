@@ -50,10 +50,13 @@ public class gameManager : MonoBehaviour {
 	{
 		List<int> puzzleLock = new List<int> {2,0,0,0};
 		SetInts("puzzleLock", puzzleLock);
+		//List<string> puzzleTime = new List<sting> {"--","--","--","--"};
+		//SetStrings("puzzleLock", puzzleTime);
 	}
 
-	public void saveProgress()
+	public void saveProgress(float timer)
 	{
+		Debug.Log("Time:" + timer);
 		List<int> puzzleLock = GetInts("puzzleLock");
 		puzzleLock[level] = 3;
 		if (puzzle.Count > level + 1 && puzzleLock[level + 1] == 0)
