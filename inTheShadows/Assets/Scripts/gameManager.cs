@@ -8,6 +8,8 @@ public class gameManager : MonoBehaviour {
 	public bool mode;
 	public static int level;
 	public int lvl;
+	public static bool sound;
+	public bool son;
 	public selectLevel select;
 	public List<GameObject> puzzle;
 
@@ -16,6 +18,7 @@ public class gameManager : MonoBehaviour {
 		mode = classicMode;
 		if (GetInts("puzzleLock").Count == 0)
 			resetProgress();
+		son = sound;
 	}
 
 	void Start () {
@@ -26,6 +29,15 @@ public class gameManager : MonoBehaviour {
 	void Update () {
 		if (select)
 			level = select.level;
+		son = sound;
+	}
+
+	public void setSound ()
+	{
+		if (sound)
+			sound = false;
+		else
+			sound = true;
 	}
 
 	public void chooseMode(bool classic)

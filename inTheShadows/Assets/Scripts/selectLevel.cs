@@ -15,7 +15,7 @@ public class selectLevel : MonoBehaviour {
 
 	void Start () {
 		level = gm.lvl;
-		transform.position = new Vector3(transform.position.x - 502 * level, transform.position.y, transform.position.z);
+		transform.position = new Vector3(transform.position.x - Screen.width * 0.63f * level, transform.position.y, transform.position.z);
 		shadows.transform.position = new Vector3(transform.position.x, shadows.transform.position.y, shadows.transform.position.z);
 		target = transform.position;
 	}
@@ -42,7 +42,7 @@ public class selectLevel : MonoBehaviour {
 	{
 		if (level < 3 && Vector3.Distance(transform.position, target) < 5)
 		{
-			target = new Vector3(transform.position.x - 502, transform.position.y, transform.position.z);
+			target = new Vector3(transform.position.x - Screen.width * 0.63f, transform.position.y, transform.position.z);
 			level++;
 		}
 	}
@@ -51,7 +51,7 @@ public class selectLevel : MonoBehaviour {
 	{
 		if (level > 0 && Vector3.Distance(transform.position, target) < 5)
 		{
-			target = new Vector3(transform.position.x + 502, transform.position.y, transform.position.z);
+			target = new Vector3(transform.position.x + Screen.width * 0.63f, transform.position.y, transform.position.z);
 			level--;
 		}
 	}

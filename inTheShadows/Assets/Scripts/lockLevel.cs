@@ -8,20 +8,38 @@ public class lockLevel : MonoBehaviour {
 	public gameManager gm;
 	public List<GameObject> level;
 	public List<GameObject> shadows;
-	public Font m_Font;
+	public Font arial;
+	public Font none;
 	private int cinematic = 0;
 	private int i = 0;
+	public Image unlock;
+	private Animation anim;
 
 	void Start () {
 		if (gm.mode)
 		{
+			setLock();
+			setLock();
+		}
+	}
+	
+	private void setLock()
+	{
+		if (gm.mode)
+		{
+			i = 0;
 			List<int> puzzleLock = gm.GetInts("puzzleLock");
 			foreach (int item in puzzleLock)
 			{
-				if (item == 0)
+				if (item == 0 || item == 1)
 				{
 					level[i].GetComponent<Button>().interactable = false;
-					shadows[i].GetComponent<Text>().font = m_Font;
+					shadows[i].GetComponent<Text>().font = none;
+				}
+				else
+				{
+					level[i].GetComponent<Button>().interactable = true;
+					shadows[i].GetComponent<Text>().font = arial;
 				}
 				if (item == 1)
 					cinematic = i;
@@ -36,12 +54,11 @@ public class lockLevel : MonoBehaviour {
 			}
 		}
 	}
-	
-	void Update () {
-	}
 
 	private void unlockLevel()
 	{
+		anim = unlock.GetComponent<Animation>();
+		anim.Play();
 		Debug.Log("unlock next level");
 	}
 }
