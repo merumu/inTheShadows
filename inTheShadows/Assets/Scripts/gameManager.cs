@@ -18,7 +18,10 @@ public class gameManager : MonoBehaviour {
 		mode = classicMode;
 		if (GetInts("puzzleLock").Count == 0)
 			resetProgress();
-		son = sound;
+		if (PlayerPrefs.GetInt("sound") == 1)
+			sound = true;
+		else
+			sound = false;
 	}
 
 	void Start () {
@@ -32,12 +35,18 @@ public class gameManager : MonoBehaviour {
 		son = sound;
 	}
 
-	public void setSound ()
+	public void setSound()
 	{
 		if (sound)
+		{
 			sound = false;
+			PlayerPrefs.SetInt("sound", 0);
+		}
 		else
+		{
+			PlayerPrefs.SetInt("sound", 1);
 			sound = true;
+		}
 	}
 
 	public void chooseMode(bool classic)
@@ -48,6 +57,7 @@ public class gameManager : MonoBehaviour {
 
 	public void resetProgress()
 	{
+		PlayerPrefs.SetInt("sound", 1);
 		List<int> puzzleLock = new List<int> {2,0,0,0,0,0,0};
 		SetInts("puzzleLock", puzzleLock);
 		List<string> puzzleTime = new List<string> {"--","--","--","--","--","--","--"};

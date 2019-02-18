@@ -329,6 +329,34 @@ Prefab:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 2088779107}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.23360407
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.45880932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.06259402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8549884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459514468485294, guid: 0601a569817c74f18a6de127a7614994, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0601a569817c74f18a6de127a7614994, type: 2}
   m_IsPrefabParent: 0
@@ -542,7 +570,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 331110925
+  randomSeed: -1455414621
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4705,6 +4733,38 @@ Prefab:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 2088779107}
+    - target: {fileID: 1961680090594382, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.8096549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.0718049
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.2817485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.50982434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796441464053090, guid: da61803896bd441fb864b8999d218839, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da61803896bd441fb864b8999d218839, type: 2}
   m_IsPrefabParent: 0
@@ -8739,7 +8799,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 340882822
+  randomSeed: 1214376712
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12121,6 +12181,46 @@ Prefab:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 2088779107}
+    - target: {fileID: 4761574868512542, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761574868512542, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761574868512542, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.23360407
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.45880932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.06259402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8549884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463034142466420, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2c62d762763e453b83b0d54608b753e, type: 2}
   m_IsPrefabParent: 0
@@ -12609,7 +12709,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2065690120
+  randomSeed: 597035176
   InitialModule:
     serializedVersion: 3
     enabled: 1

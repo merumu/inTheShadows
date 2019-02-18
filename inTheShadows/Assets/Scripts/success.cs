@@ -33,12 +33,16 @@ public class success : MonoBehaviour {
 				escMenu.blocksRaycasts = false;
 			}
 		}
+		levelTimer();
+		win();
+		konamiCode();
+	}
+
+	private void levelTimer(){
 		if (escMenu.alpha == 0)
 			timer += Time.deltaTime;
 		if (play)
 			timeText.text = "Time : " + (Mathf.Floor(timer * 100) / 100).ToString() + "s";
-		win();
-		konamiCode();
 	}
 
 	private void win(){

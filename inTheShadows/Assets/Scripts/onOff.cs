@@ -8,10 +8,12 @@ public class onOff : MonoBehaviour {
 	public gameManager gm;
 	public Text on;
 	public Text shadows;
+	private int s;
 
 	void Start()
 	{
-		if (gm.son)
+		s = PlayerPrefs.GetInt("sound");
+		if (s == 1)
 		{
 			on.text = "On";
 			shadows.text = "On";

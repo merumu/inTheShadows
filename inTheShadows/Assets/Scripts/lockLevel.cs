@@ -71,7 +71,10 @@ public class lockLevel : MonoBehaviour {
 
 	private void unlockLevel()
 	{
-		anim = unlock.GetComponent<Animation>();
-		anim.Play();
+		if (gm.lvl != 0)
+		{
+			anim = unlock.GetComponent<Animation>();
+			anim.Play();
+		}
 	}
 }
