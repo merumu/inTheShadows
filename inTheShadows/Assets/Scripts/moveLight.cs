@@ -16,14 +16,14 @@ public class moveLight : MonoBehaviour {
 			speedY = Random.Range(0f, 0.1f);
 		else
 			speedY = Random.Range(-0.1f, 0f);
-		if (transform.localPosition.x < -50)
+		if (transform.localPosition.x < -40)
 		{
-			transform.localPosition = new Vector3 (-50, transform.localPosition.y, transform.localPosition.z);
+			transform.localPosition = new Vector3 (-40, transform.localPosition.y, transform.localPosition.z);
 			speedX *= -1;
 		}
-		if (transform.localPosition.x > 50)
+		if (transform.localPosition.x > 40)
 		{
-			transform.localPosition = new Vector3 (50, transform.localPosition.y, transform.localPosition.z);
+			transform.localPosition = new Vector3 (40, transform.localPosition.y, transform.localPosition.z);
 			speedX *= -1;
 		}
 		if (transform.localPosition.y < -20)

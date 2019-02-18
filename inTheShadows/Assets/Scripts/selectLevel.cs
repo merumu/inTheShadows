@@ -15,13 +15,13 @@ public class selectLevel : MonoBehaviour {
 
 	void Start () {
 		level = gm.lvl;
-		transform.position = new Vector3(transform.position.x - Screen.width * 0.63f * level, transform.position.y, transform.position.z);
-		shadows.transform.position = new Vector3(transform.position.x, shadows.transform.position.y, shadows.transform.position.z);
+		transform.position = new Vector3(transform.position.x - Screen.width * level, transform.position.y, transform.position.z);
+		shadows.transform.position = new Vector3(transform.position.x + 10, shadows.transform.position.y, shadows.transform.position.z);
 		target = transform.position;
 	}
 	
 	void Update () {
-		if (level == 3)
+		if (level == 6)
 			right.interactable = false;
 		else
 			right.interactable = true;
@@ -35,14 +35,14 @@ public class selectLevel : MonoBehaviour {
 	private void moveToTarget()
 	{
 		transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
-		shadows.transform.position = new Vector3(transform.position.x + shadows.transform.parent.transform.localPosition.x, shadows.transform.position.y, shadows.transform.position.z);
+		shadows.transform.position = new Vector3(transform.position.x + shadows.transform.parent.transform.localPosition.x + 10, shadows.transform.position.y, shadows.transform.position.z);
 	}
 
 	public void next()
 	{
-		if (level < 3 && Vector3.Distance(transform.position, target) < 5)
+		if (level < 6 && Vector3.Distance(transform.position, target) < 5)
 		{
-			target = new Vector3(transform.position.x - Screen.width * 0.63f, transform.position.y, transform.position.z);
+			target = new Vector3(transform.position.x - Screen.width, transform.position.y, transform.position.z);
 			level++;
 		}
 	}
@@ -51,7 +51,7 @@ public class selectLevel : MonoBehaviour {
 	{
 		if (level > 0 && Vector3.Distance(transform.position, target) < 5)
 		{
-			target = new Vector3(transform.position.x + Screen.width * 0.63f, transform.position.y, transform.position.z);
+			target = new Vector3(transform.position.x + Screen.width, transform.position.y, transform.position.z);
 			level--;
 		}
 	}

@@ -8,6 +8,7 @@ public class lockLevel : MonoBehaviour {
 	public gameManager gm;
 	public List<GameObject> level;
 	public List<GameObject> shadows;
+	public List<GameObject> timer;
 	public Font arial;
 	public Font none;
 	private int cinematic = 0;
@@ -35,17 +36,24 @@ public class lockLevel : MonoBehaviour {
 		{
 			i = 0;
 			List<int> puzzleLock = gm.GetInts("puzzleLock");
+			List<string> puzzleTime = gm.GetStrings("puzzleTime");
 			foreach (int item in puzzleLock)
 			{
+				if (puzzleTime[i] != "--")
+					timer[i].GetComponent<Text>().text = "Best : " + puzzleTime[i] + "s";
+				else
+					timer[i].GetComponent<Text>().text = "Best : " + puzzleTime[i];
 				if (item == 0 || item == 1)
 				{
 					level[i].GetComponent<Button>().interactable = false;
 					shadows[i].GetComponent<Text>().font = none;
+					timer[i].GetComponent<Text>().font = none;
 				}
 				else
 				{
 					level[i].GetComponent<Button>().interactable = true;
 					shadows[i].GetComponent<Text>().font = arial;
+					timer[i].GetComponent<Text>().font = arial;
 				}
 				if (item == 1)
 					cinematic = i;

@@ -12,6 +12,7 @@ public class success : MonoBehaviour {
 	public CanvasGroup escMenu;
 	public bool multi;
 	public ParticleSystem system;
+	public Text timeText;
 	private bool play = true;
 	private int konami;
 	private float timer;
@@ -32,7 +33,10 @@ public class success : MonoBehaviour {
 				escMenu.blocksRaycasts = false;
 			}
 		}
-		timer += Time.deltaTime;
+		if (escMenu.alpha == 0)
+			timer += Time.deltaTime;
+		if (play)
+			timeText.text = "Time : " + (Mathf.Floor(timer * 100) / 100).ToString() + "s";
 		win();
 		konamiCode();
 	}
