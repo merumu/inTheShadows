@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class flipObject : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 		Mesh mesh = GetComponent<MeshFilter>().mesh;
 	    int[] tri = mesh.triangles;   
