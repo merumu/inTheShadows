@@ -5,13 +5,14 @@ using UnityEngine;
 public class gameManager : MonoBehaviour {
 
 	public static bool classicMode;
-	public bool mode;
+	[HideInInspector] public bool mode;
 	public static int level;
-	public int lvl;
+	[HideInInspector] public int lvl;
 	public static bool sound;
-	public bool son;
-	public selectLevel select;
+	[HideInInspector] public bool son;
+	[HideInInspector] public selectLevel select;
 	public List<GameObject> puzzle;
+	private AudioSource theme;
 
 	void Awake () {
 		lvl = level;
@@ -22,17 +23,31 @@ public class gameManager : MonoBehaviour {
 			sound = true;
 		else
 			sound = false;
+		son = sound;
 	}
 
 	void Start () {
 		if (puzzle.Count > 0)
 			puzzle[level].SetActive(true);
+		GameObject tmp = GameObject.FindGameObjectWithTag("dontDestroy");
+		if (tmp)
+			theme = tmp.GetComponent<AudioSource>();
 	}
 	
 	void Update () {
 		if (select)
 			level = select.level;
 		son = sound;
+		if (son && puzzle.Count == 0)
+		{
+			if (theme && !theme.isPlaying)
+           		theme.Play();
+		}
+		else
+		{
+			if (theme && theme.isPlaying)
+           		theme.Stop();
+		}
 	}
 
 	public void setSound()

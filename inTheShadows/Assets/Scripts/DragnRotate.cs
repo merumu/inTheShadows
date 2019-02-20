@@ -12,8 +12,8 @@ public class DragnRotate : MonoBehaviour{
 	public bool mirror;
 	public Vector3 raydir;
 	public Vector3 win;
-	public bool success = false;
-	public bool end = false;
+	[HideInInspector] public bool success = false;
+	[HideInInspector] public bool end = false;
 	private float timer = 0;
 	private Vector3 positionTmp = Vector3.zero;
 

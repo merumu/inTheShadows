@@ -10,13 +10,15 @@ public class lockLevel : MonoBehaviour {
 	public List<GameObject> shadows;
 	public List<GameObject> timer;
 	public Font arial;
-	public Font none;
+	[HideInInspector] public Font none;
 	private int cinematic = 0;
 	private int i = 0;
 	public Image unlock;
 	private Animation anim;
+	private AudioSource unlockSound;
 
 	void Start () {
+		unlockSound = GetComponent<AudioSource>();
 		if (gm.mode)
 		{
 			setLock();
@@ -75,6 +77,8 @@ public class lockLevel : MonoBehaviour {
 		{
 			anim = unlock.GetComponent<Animation>();
 			anim.Play();
+			if (gm.son)
+				unlockSound.Play();
 		}
 	}
 }

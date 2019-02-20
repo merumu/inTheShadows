@@ -16,26 +16,44 @@ public class success : MonoBehaviour {
 	private bool play = true;
 	private int konami;
 	private float timer;
+	private AudioSource ticTacSound;
+	private AudioSource victorySound;
+	private AudioSource fireworkSound;
+
+	void Start () {
+		ticTacSound = escMenu.GetComponent<AudioSource>();
+		victorySound = victory.GetComponent<AudioSource>();
+		fireworkSound = system.GetComponent<AudioSource>();
+		if (gm.son)
+			ticTacSound.Play();
+	}
 	
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape) && victory.alpha == 0)
-		{
-			if (escMenu.alpha == 0)
+			escapeMenu();
+		levelTimer();
+		win();
+		konamiCode();
+	}
+	
+	private void escapeMenu()
+	{
+		if (escMenu.alpha == 0)
 			{
+				if (gm.son)
+					ticTacSound.Stop();
 				escMenu.alpha = 1;
 				escMenu.interactable = true;
 				escMenu.blocksRaycasts = true;
 			}
 			else
 			{
+				if (gm.son)
+					ticTacSound.Play();
 				escMenu.alpha = 0;
 				escMenu.interactable = false;
 				escMenu.blocksRaycasts = false;
 			}
-		}
-		levelTimer();
-		win();
-		konamiCode();
 	}
 
 	private void levelTimer(){
@@ -59,6 +77,12 @@ public class success : MonoBehaviour {
 					if (gm.mode)
 						gm.saveProgress(timer);
 					system.Play(play);
+					if (gm.son)
+					{
+						ticTacSound.Stop();
+						victorySound.Play();
+						StartCoroutine(beginSound());
+					}
 					play = false;
 				}
 			}
@@ -74,10 +98,22 @@ public class success : MonoBehaviour {
 					if (gm.mode)
 						gm.saveProgress(timer);
 					system.Play(play);
+					if (gm.son)
+					{
+						ticTacSound.Stop();
+						victorySound.Play();
+						StartCoroutine(beginSound());
+					}
 					play = false;
 				}
 			}
 		}
+	}
+
+	IEnumerator beginSound()
+	{
+		yield return new WaitForSeconds(1.2f);
+		fireworkSound.Play();
 	}
 
 	private void konamiCode(){
