@@ -68,13 +68,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080501034922988}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.23360407, y: 0.45880932, z: 0.06259402, w: 0.8549884}
   m_LocalPosition: {x: 3.3181782, y: -0.62, z: 7.81}
   m_LocalScale: {x: 58.105545, y: 58.10553, z: 58.10553}
   m_Children: []
   m_Father: {fileID: 4567573616590148}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 60, z: 20}
 --- !u!4 &4567573616590148
 Transform:
   m_ObjectHideFlags: 1
@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1537736099464404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.33, y: -0.5, z: -3.8}
+  m_LocalPosition: {x: 3.33, y: -0.5, z: -8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4567573616590148}
@@ -195,6 +195,7 @@ MonoBehaviour:
   escMenu: {fileID: 0}
   multi: 0
   system: {fileID: 0}
+  timeText: {fileID: 0}
 --- !u!135 &135466750979669672
 SphereCollider:
   m_ObjectHideFlags: 1

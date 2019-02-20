@@ -8,6 +8,7 @@ public class selectLevel : MonoBehaviour {
 	public gameManager gm;
 	public int level;
 	public GameObject shadows;
+	public GameObject bg;
 	public Button right;
 	public Button left;
 	private Vector3 target;
@@ -17,6 +18,7 @@ public class selectLevel : MonoBehaviour {
 		level = gm.lvl;
 		transform.position = new Vector3(transform.position.x - Screen.width * level, transform.position.y, transform.position.z);
 		shadows.transform.position = new Vector3(transform.position.x + 10, shadows.transform.position.y, shadows.transform.position.z);
+		bg.transform.position = transform.position;
 		target = transform.position;
 	}
 	
@@ -36,6 +38,7 @@ public class selectLevel : MonoBehaviour {
 	{
 		transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
 		shadows.transform.position = new Vector3(transform.position.x + shadows.transform.parent.transform.localPosition.x + 10, shadows.transform.position.y, shadows.transform.position.z);
+		bg.transform.position = transform.position;
 	}
 
 	public void next()
