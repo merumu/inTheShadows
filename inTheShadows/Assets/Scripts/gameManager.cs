@@ -73,9 +73,9 @@ public class gameManager : MonoBehaviour {
 	public void resetProgress()
 	{
 		PlayerPrefs.SetInt("sound", 1);
-		List<int> puzzleLock = new List<int> {2,0,0,0,0,0,0};
+		List<int> puzzleLock = new List<int> {2,0,0,0,0,0,0,0,0};
 		SetInts("puzzleLock", puzzleLock);
-		List<string> puzzleTime = new List<string> {"--","--","--","--","--","--","--"};
+		List<string> puzzleTime = new List<string> {"--","--","--","--","--","--","--","--","--"};
 		SetStrings("puzzleTime", puzzleTime);
 	}
 

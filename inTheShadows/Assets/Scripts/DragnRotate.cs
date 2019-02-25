@@ -64,9 +64,9 @@ public class DragnRotate : MonoBehaviour{
 		if (Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftControl) && rotY)
 		{
 			if (positionTmp.x < Input.mousePosition.x)
-				transform.rotation *= Quaternion.Euler(0,-4,4);
+				transform.rotation *= Quaternion.Euler(0,-4,0);
 			if (positionTmp.x > Input.mousePosition.x)
-				transform.rotation *= Quaternion.Euler(0,4,-4);
+				transform.rotation *= Quaternion.Euler(0,4,0);
 		}
 		if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftControl) && rotX)
 		{

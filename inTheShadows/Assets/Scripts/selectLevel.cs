@@ -25,7 +25,7 @@ public class selectLevel : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (level == 6)
+		if (level == 8)
 			right.interactable = false;
 		else
 			right.interactable = true;
@@ -45,7 +45,7 @@ public class selectLevel : MonoBehaviour {
 
 	public void next()
 	{
-		if (level < 6 && Vector3.Distance(transform.position, target) < 5)
+		if (level < 8 && Vector3.Distance(transform.position, target) < 5)
 		{
 			if (gm.son)
 				swipe.Play();
