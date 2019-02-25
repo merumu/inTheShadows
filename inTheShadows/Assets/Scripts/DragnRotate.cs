@@ -28,6 +28,8 @@ public class DragnRotate : MonoBehaviour{
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(win), 5f);
 		else if (timer >= 0)
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(win.x, win.y + 180, win.z)), 5f);
+		if (moveY)
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 0.5f, transform.position.z), 0.1f);
 		end = true;
 	}
 
