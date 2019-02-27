@@ -91,10 +91,8 @@ public class gameManager : MonoBehaviour {
 		List<int> puzzleLock = GetInts("puzzleLock");
 		puzzleLock[level] = 3;
 		if (puzzle.Count > level + 1 && puzzleLock[level + 1] == 0)
-		{
 			puzzleLock[level + 1] = 1;
-			level++;
-		}
+		level++;
 		SetInts("puzzleLock", puzzleLock);
 	}
 

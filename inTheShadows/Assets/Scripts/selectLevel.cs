@@ -11,12 +11,17 @@ public class selectLevel : MonoBehaviour {
 	public GameObject bg;
 	public Button right;
 	public Button left;
+	public Text finalText;
+	public Text finalTextShadows;
+	private AudioSource finalSound;
 	private AudioSource swipe;
 	private Vector3 target;
 	private float speed = 8;
+	private bool final = false;
 
 	void Start () {
 		swipe = left.GetComponent<AudioSource>();
+		finalSound = finalText.GetComponent<AudioSource>();
 		level = gm.lvl;
 		transform.position = new Vector3(transform.position.x - Screen.width * level, transform.position.y, transform.position.z);
 		shadows.transform.position = new Vector3(transform.position.x + 10, shadows.transform.position.y, shadows.transform.position.z);
@@ -25,7 +30,8 @@ public class selectLevel : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (level == 8)
+		finalScore();
+		if ((level == 8 && !final) || level == 9)
 			right.interactable = false;
 		else
 			right.interactable = true;
@@ -34,6 +40,39 @@ public class selectLevel : MonoBehaviour {
 		else
 			left.interactable = true;
 		moveToTarget();
+	}
+
+	private void finalScore()
+	{
+		if (gm.mode)
+		{
+			List<int> puzzleLock = gm.GetInts("puzzleLock");
+			if (puzzleLock[puzzleLock.Count - 1] == 3)
+				final = true;
+		}
+		if (final)
+		{
+			float score = 0;
+			List<string> puzzleTime = gm.GetStrings("puzzleTime");
+			foreach (string item in puzzleTime)
+			{
+				score += float.Parse(item);
+			}
+			finalText.text = "Congratulations !\n\nTotal Score :\n" + score + "s\n\n";
+			if (score < 30)
+				finalText.text += "You're a Cheater !";
+			else if (score < 120)
+				finalText.text += "You're a Pro !";
+			else if (score < 600)
+				finalText.text += "Well Done !";
+			else
+				finalText.text += "That's Bad...";
+			finalTextShadows.text = finalText.text;
+		}
+		if (level == 9 && gm.son && !finalSound.isPlaying)
+			finalSound.Play();
+		else if (level != 9)
+			finalSound.Stop();
 	}
 
 	private void moveToTarget()
@@ -45,7 +84,7 @@ public class selectLevel : MonoBehaviour {
 
 	public void next()
 	{
-		if (level < 8 && Vector3.Distance(transform.position, target) < 5)
+		if ((level < 8 || final) && level < 9 && Vector3.Distance(transform.position, target) < 5)
 		{
 			if (gm.son)
 				swipe.Play();
